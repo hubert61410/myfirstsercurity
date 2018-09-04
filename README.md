@@ -1,6 +1,6 @@
-xxd -h
-```
 
+```
+xxd -h
 Usage:
        xxd [options] [infile [outfile]]
     or
