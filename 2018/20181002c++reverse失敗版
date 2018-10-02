@@ -1,0 +1,19 @@
+```
+#include<iostream>
+using namespace std;
+
+int main() {
+int a=0;
+
+string ans;
+cin>>ans;
+a=ans.length();
+string b=ans;
+for(int i=0;i<a;i++){
+	b[i]=ans[a-1-i];
+}
+cout<<b;
+
+	return 0;
+}
+```
