@@ -201,6 +201,23 @@ bash: solution: command not found
 root@kali:~# cat solution
 hubert is great
 ```
+#CAST對稱式密碼(其他密碼也差不多)
+
+```
+加密
+root@kali:~# openssl cast -in hubert -out hubert.cast
+enter cast5-cbc encryption password:hubert
+Verifying - enter cast5-cbc encryption password:hubert
+密文
+root@kali:~# cat hubert.cast
+Malted__R9|V��y5���)���6t*��a֭M�root@kali:~# 
+解密
+root@kali:~# openssl cast -d -in hubert.cast -out solh
+enter cast5-cbc decryption password:
+root@kali:~# cat solh
+hubert is great
+```
+
 
 
 
