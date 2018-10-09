@@ -283,6 +283,30 @@ root@kali:~# md5sum hubert.txt     驗證md5 hash
 c12a69ddcdc8234eca95bf6ff9435bec  hubert.txt
 
  ```
+ #python2 hash
+ ```
+ oot@kali:~# python2
+Python 2.7.14 (default, Sep 17 2017, 18:50:44) 
+[GCC 7.2.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import hashlib
+>>> a='hubert is great'
+>>> print hashlib.md5(a).hexdigest()
+5f76fb05a0acad66d0e435e26a377cda
+>>> print hashlib.sha1(a).hexdigest()
+16bbf0cb7aabaf922d27940f7f99c1254c67a270
+>>> print hashlib.sha224(a).hexdigest()
+abd292ee0b9b0517d9ee671ccf35bb41bf6f11ecd04b95f5b82918e6
+>>> print hashlib.sha256(a).hexdigest()
+55c9a2bda9757251d477f53b81bf237f813a86bd94eb364d281a09d58c8b164b
+>>> print hashlib.sha384(a).hexdigest()
+a2bb8234462376e72be800adee190dc9f75997361fba5d63f1c1076cbb2b74e1787be35e267c9d67edf7781e4f71b7fa
+>>> print hashlib.sha512(a).hexdigest()
+cdd8c8f2caf1893425ddac9b0e25540d49fbc22dc2a2f88d07cfd1007623782f6ab0afd284405f8f13821de93f261e60cb3f505908cc27244e42df6ac52354a0
+>>> 
+
+
+ ```
 
 
 
