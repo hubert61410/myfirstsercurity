@@ -228,6 +228,22 @@ enter cast5-cbc decryption password:hubert
 root@kali:~# cat solh
 hubert is great
 ```
+#SEED對稱式密碼
+```
+加密
+root@kali:~# openssl seed -in hubert -out hubert.seed
+enter seed-cbc encryption password:
+Verifying - enter seed-cbc encryption password:
+密文
+root@kali:~# cat hubert.seed
+Salted__s��j�Abܒu+���=Pj#�0�ί7~Z4Q+I�Aq�
+解密
+root@kali:~# openssl seed -d -in hubert.seed -out solutionh
+enter seed-cbc decryption password:
+root@kali:~# cat solutionh
+hubert is great
+
+```
 
 
 
