@@ -176,6 +176,7 @@ enter des-cbc encryption password:hubert
 Verifying - enter des-cbc encryption password:hubert
 cat infile
 a123456789
+密文
 cat infile.des
 Salted__���5
 解密
@@ -191,6 +192,7 @@ root@kali:~# echo "hubert is great" >hubert
 root@kali:~# openssl des3 -in hubert -out hubert.des3
 enter des-ede3-cbc encryption password:hubert
 Verifying - enter des-ede3-cbc encryption password:hubert
+密文
 root@kali:~# cat hubert.des3
 Salted__�]���Rj񁚜�#���vv��+z{�ȩVroot@kali:~# 
 解密
@@ -213,7 +215,7 @@ root@kali:~# cat hubert.cast
 Malted__R9|V��y5���)���6t*��a֭M�root@kali:~# 
 解密
 root@kali:~# openssl cast -d -in hubert.cast -out solh
-enter cast5-cbc decryption password:
+enter cast5-cbc decryption password:hubert
 root@kali:~# cat solh
 hubert is great
 ```
