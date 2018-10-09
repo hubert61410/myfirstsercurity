@@ -194,7 +194,7 @@ enter des-ede3-cbc encryption password:hubert
 Verifying - enter des-ede3-cbc encryption password:hubert
 密文
 root@kali:~# cat hubert.des3
-Salted__�]���Rj񁚜�#���vv��+z{�ȩVroot@kali:~# 
+Salted__�]���Rj񁚜�#���vv��+z{�ȩV
 解密
 root@kali:~# openssl des3 -d -in hubert.des3 -out solution
 enter des-ede3-cbc decryption password:hubert
@@ -212,7 +212,7 @@ enter cast5-cbc encryption password:hubert
 Verifying - enter cast5-cbc encryption password:hubert
 密文
 root@kali:~# cat hubert.cast
-Malted__R9|V��y5���)���6t*��a֭M�root@kali:~# 
+Malted__R9|V��y5���)���6t*��a֭M�
 解密
 root@kali:~# openssl cast -d -in hubert.cast -out solh
 enter cast5-cbc decryption password:hubert
