@@ -274,7 +274,15 @@ Usage: dgst [options] [file...]
  -engine_impl       Also use engine given by -engine for digest operations
  ```
  
- #
+ #計算與驗證檔案的md5 hash
+ ```
+ root@kali:~# echo "hubert" > hubert.txt
+root@kali:~# openssl dgst -md5 -c hubert.txt   計算md5 hash
+MD5(hubert.txt)= c1:2a:69:dd:cd:c8:23:4e:ca:95:bf:6f:f9:43:5b:ec
+root@kali:~# md5sum hubert.txt     驗證md5 hash
+c12a69ddcdc8234eca95bf6ff9435bec  hubert.txt
+
+ ```
 
 
 
