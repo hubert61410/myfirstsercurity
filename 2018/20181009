@@ -1,8 +1,17 @@
 # Xor(python2)
 ```
+a=0b00001111
+b=0b11001100
+c=bin(a^b)
+print c
+0b11000011
+////a xor (a xor b)=b
+d=bin(a^a^b)
+print d
+0b11001100
 
 
-
+```
 # openssl
 ```
 openssl help
