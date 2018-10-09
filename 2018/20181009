@@ -166,6 +166,25 @@ Supported ciphers:
 -rc4-40                    -seed                      -seed-cbc                 
 -seed-cfb                  -seed-ecb                  -seed-ofb                 
 ```
+#DES 對稱式密碼
+
+```
+加密
+echo "a123456789" > infile
+openssl des -in infile -out infile.des
+enter des-cbc encryption password:hubert
+Verifying - enter des-cbc encryption password:hubert
+cat infile
+a123456789
+cat infile.des
+Salted__���5
+解密
+openssl des -d -in infile.des -out sol 
+enter des-cbc decryption password:hubert
+cat sol
+a123456789
+
+
 
 
 
