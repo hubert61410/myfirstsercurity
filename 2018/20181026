@@ -1,4 +1,75 @@
 #作業?
+
 ```
 https://colab.research.google.com/drive/1b4w_7ZPEvKbrqN-6xQr_FrtwFJGKHivS#scrollTo=NzwqXkmHxyOF
+```
+
+
+
+#不對稱金鑰
+
+```
+root@kali:~# openssl genrsa  -out private.pem
+Generating RSA private key, 2048 bit long modulus
+.........+++
+...........+++
+e is 65537 (0x010001)
+root@kali:~# cat private.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAv3F3aj1bWaSI5YMARU+KK1awAzRsLFsrS/su5WnjTJK4LkJ+
+gipDDuus/rw0qz7/389Y/+AtXcGM6CfzkJQbfKcAd2Y9k3gjXo7zb6kPv8xHLpnG
+WRUNtvcjdNjOYKDnqY5tQC4656d0Uy2XvbSC/qV5p2bVQkuOHD/10VlV1N0vtvPA
+QKadPdnf1yP4cunB4fYjg1oGYzJWlOWWRm03NPOAcX/AU0MHvxCJEfLc1ldi4mwl
+x7V2m/3EqGeLZyhUykpUqZ0Q071gyUKD3dYB+qDRrl0ehn+94MkcO5EbBs23clCd
+0d3zkhwSzoKMrZw6zSCQQ55o1EvzyZ8Lb7C8gwIDAQABAoIBAB9KlJIw5TWJxzZ8
+axbpIVRkHvDnKKc3X6RTsh6daCGj+abWB4ePENbnfqdEa/dxnLEgWxO3uLKSaE2p
++g2vp66APXtGotnv0RgrlW6y23gmE5xyVhFJd6xoSMtYhKMWqcb1GLZc2BP1MvZF
+hX/keWTV90R9cm4bm2bSrYNCbt0T4S5TD/kqArsNah2OPvK2z7tcgpP55q+uRNkw
+3TiEUptf0yutmDAfv0czBqYa2/ZCjFdoSqrds1eubnK0L4UW8T+jIjYdCdndQX2g
+I0RE/H8UsGB8Y6yeKLtVcx+O06aGpukkeECcLRQCjYlGXcdbYEqNEUjWY50FZc39
+ovT4AAECgYEA/NDLM79L7l7QaEHTR+LJB1S/taI3YRKkFxgLmMtGCkI/sCtyNzLK
+CPxsj4r5YRO42NRVqiuaoPa2Nbu+/KgwNk252FUcmhZhdHBPk5yFaLcL+BRIhmFq
+A9JRThLaAUlu4693POSUngKc2EUvGIoi9IA4xa7GGh3wrkX2ozAbrIMCgYEAwdrG
+5IqszPU2FNwLwSxhrIsCF9VdqLfeoTKIxgDyhj1mCPj8bXWNd2y+BxMUM0YALISD
+aP04IQk6aTu/QXnLzaXyhUk9W54Gks2IzuIY8eC1jldu7TL/a9M+S3VVtZ7qpX+p
+W3PGzvXKhQIQLaUSO6S5PbnxcBaw2yIR64gpsAECgYEA35ob30zWb6HUWiG+KNpg
+SueeF5u9t1GxZ+uQdjdzXydxBPOoNUHqh0AbFGoqXr3+w2gpzDR8stkCF0xSg0yO
+N7lPIhNFFNOupjmfaEMLi646G9R0wMXv6ileV9s8jd7RAPf0UhsphwdwiafHG8Ex
+YWb2z4DhHcBVWw3uMi8eitkCgYALpr2bkOYv73EPseYW9zbrqvM2QYG+mUaNQ79K
+v1XUUa5nTafGYHFfQy7st+3X4xYxlslbLxUHj0lud8PYCJ0CQD4iWrOQZSAaBLZ7
+UMWVDB99ba3iHdWSQoEVAflj0ChkSBcCwyOo3scMVYJpa+l7ojvsBNgJF6QLl7Gi
+CW4QAQKBgA1qoYHb5D8hq2lKZWeih6wR23ag4Z3twzbV/NtocJJK0DIp3VkjXVtU
+9iCxLCdQlqtRxq6Px1yyiZmqoI8XdYcuqtxOYWuzrddv7dKeDMz29bSsnNOoobuE
+0s7FfHXw97BMKBt3/UtzN7lTSkCWJ1WuaJpX9qTO/vax/ztGCj8Q
+-----END RSA PRIVATE KEY-----
+root@kali:~# openssl rsa -in private.pem -out public.pem -outform PEM -pubout
+writing RSA key
+root@kali:~# cat public.pem
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv3F3aj1bWaSI5YMARU+K
+K1awAzRsLFsrS/su5WnjTJK4LkJ+gipDDuus/rw0qz7/389Y/+AtXcGM6CfzkJQb
+fKcAd2Y9k3gjXo7zb6kPv8xHLpnGWRUNtvcjdNjOYKDnqY5tQC4656d0Uy2XvbSC
+/qV5p2bVQkuOHD/10VlV1N0vtvPAQKadPdnf1yP4cunB4fYjg1oGYzJWlOWWRm03
+NPOAcX/AU0MHvxCJEfLc1ldi4mwlx7V2m/3EqGeLZyhUykpUqZ0Q071gyUKD3dYB
++qDRrl0ehn+94MkcO5EbBs23clCd0d3zkhwSzoKMrZw6zSCQQ55o1EvzyZ8Lb7C8
+gwIDAQAB
+-----END PUBLIC KEY-----
+root@kali:~# openssl rsault -encrypt public.pem -pubin -in file -out file.rsa
+Invalid command 'rsault'; type "help" for a list.
+root@kali:~# openssl rsautl -encrypt public.pem -pubin -in file -out file.rsa
+rsautl: Use -help for summary.
+root@kali:~# ls
+CTF_ex2018  Documents  file   Pictures     Public      Templates
+Desktop     Downloads  Music  private.pem  public.pem  Videos
+root@kali:~# openssl rsault -encrypt -inkey public.pem -pubin -in file -out file.rsa
+Invalid command 'rsault'; type "help" for a list.
+root@kali:~# openssl rsautl -encrypt -inkey public.pem -pubin -in file -out file.rsa
+root@kali:~# ls
+CTF_ex2018  Documents  file      Music     private.pem  public.pem  Videos
+Desktop     Downloads  file.rsa  Pictures  Public       Templates
+root@kali:~# openssl rsautl -decrypt -inkey private.pem -in file.rsa -out file.sol
+root@kali:~# cat file
+hubert is great
+root@kali:~# cat file.sol
+hubert is great
 ```
