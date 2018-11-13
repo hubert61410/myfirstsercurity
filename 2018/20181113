@@ -1,4 +1,5 @@
 ```
+網站架構
 
 <!DOCTYPE html>
 <html>
@@ -73,5 +74,16 @@ Binary exploitation - AIS3</a> </strong> from <strong><a href="https://www.slide
 Angel Boy</a></strong> </div>
 
 </html>
+
+```
+存取原始碼
+import requests
+url = 'https://www.tnfsh.tn.edu.tw/bin/home.php'
+html = requests.get(url)
+html.encoding="utf-8"
+if html.status_code == requests.codes.ok:
+    print(html.text)
+    
+```
 
 
