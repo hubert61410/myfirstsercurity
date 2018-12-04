@@ -1,0 +1,51 @@
+#rsa加密
+
+
+```
+產生金鑰
+import random
+
+def ext_euclid(a,b):
+	if b==0:
+		return 1, 0, a
+	else:
+		x,y,q=ext_euclid(b, a%b)
+		x, y= y,(x-(a//b)*y)
+		return x, y, q
+
+p = 2473
+q = 3541
+n = p*q
+phi = (p-1)*(q-1)
+
+while True:
+	public_key = int(random.random()*phi)
+	if public_key%2==0:
+		public_key+=1
+	a, b, gcd=ext_euclid(public_key, phi)
+	if gcd==1:
+	   break
+if a < 0:
+	private_key = a + phi
+else:
+	private_key = a
+print n
+print private_key
+print public_key
+
+
+加密
+plain=0487
+public_key=126395
+n=1022117
+cipher=pow(plain,public_key,n)
+print cipher
+
+解密
+cipher=7451142
+private_key=5322959
+n=8756893
+rec= pow(cipher,private_key,n)
+print rec
+```
+
